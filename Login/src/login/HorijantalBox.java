@@ -25,38 +25,38 @@ public class HorijantalBox {
     CheckBox[] checkBox = new CheckBox[2];
 
     public HorijantalBox(String strLabel1, String strText, String strLabel2) {
-        label1 = new Label(strLabel1);
-        label2 = new Label(strLabel2);
-        text = new TextField(strText);
-        box1 = new HBox(20, label1, text, label2);
-        box1.setPadding(insets);
-        box1.setAlignment(Pos.CENTER);
+        this.label1 = new Label(strLabel1);
+        this.label2 = new Label(strLabel2);
+        this.text = new TextField(strText);
+        this.box1 = new HBox(20, label1, text, label2);
+        this.box1.setPadding(insets);
+        this.box1.setAlignment(Pos.CENTER);
     }
 
     public HorijantalBox(double btnSize ,String strBtn1, String strBtn2, String strBtn3) {
-        btn1 = new Button(strBtn1);
-        btn2 = new Button(strBtn2);
-        btn3 = new Button(strBtn3);
-        btn1.setMinWidth(btnSize);
-        btn2.setMinWidth(btnSize);
-        btn3.setMinWidth(btnSize);
-        box1 = new HBox(40,btn1,btn2,btn3);
-        box1.setPadding(insets);
-        box1.setAlignment(Pos.CENTER);
+        this.btn1 = new Button(strBtn1);
+        this.btn2 = new Button(strBtn2);
+        this.btn3 = new Button(strBtn3);
+        this.btn1.setMinWidth(btnSize);
+        this.btn2.setMinWidth(btnSize);
+        this.btn3.setMinWidth(btnSize);
+        this.box1 = new HBox(40,btn1,btn2,btn3);
+        this.box1.setPadding(insets);
+        this.box1.setAlignment(Pos.CENTER);
         
     }
 
     public HorijantalBox(String[] choice) {
         this.label1 = new Label("Batch : ");
-        this.label2 = new Label("    ");
+        this.label2 = new Label("");
         this.choiceBox = new ChoiceBox();
         for(int i=0;i<choice.length;i++){
             this.choiceBox.getItems().add(choice[i]);
         }
         this.choiceBox.setValue(choice[0]);
         this.box1 = new HBox(40,this.label1,this.choiceBox,this.label2);
-        box1.setPadding(insets);
-        box1.setAlignment(Pos.CENTER);
+        this.box1.setPadding(insets);
+        this.box1.setAlignment(Pos.CENTER);
     }
 
     public HorijantalBox(String strLabel) {
@@ -66,24 +66,24 @@ public class HorijantalBox {
         this.textArea.setScaleY(1);
         this.textArea.setWrapText(true);
         this.box1 = new HBox(40,this.label1,this.textArea);
-        box1.setPadding(insets);
-        box1.setAlignment(Pos.TOP_CENTER);
+        this.box1.setPadding(insets);
+        this.box1.setAlignment(Pos.TOP_CENTER);
     }
 
     public HorijantalBox(String strLabel,String[] options) {
         this.label1 = new Label(strLabel);
         this.label2 = new Label();
-        this.box1 = new HBox(40,this.label1);
+        this.box1 = new HBox(35,this.label1);
         for(int i=0;i<options.length;i++){
             this.checkBox[i] = new CheckBox(options[i]);
             this.box1.getChildren().add(this.checkBox[i]);
         }
         this.box1.getChildren().add(this.label2);
-        box1.setPadding(insets);
-        box1.setAlignment(Pos.TOP_CENTER);
+        this.box1.setPadding(insets);
+        this.box1.setAlignment(Pos.CENTER);
     }
     
     public HBox getHBox1() {
-        return box1;
+        return this.box1;
     }
 }
